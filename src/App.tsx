@@ -1,16 +1,15 @@
 import React from 'react';
 import Login from './components/Login';
+import { GlobalStyle } from './styles/global';
+import { UserProvider } from './context/useContext';
 
 function App() {
-  // const idade = 20;
-  const nome = 'Renan';
-  const handleChange = () => {
-    console.log('OLÁ MUNDO!');
-  }
+
   return (
-    <div>
+    <UserProvider>
+      <GlobalStyle />
       <Login />  
-    </div>
+    </UserProvider>
   )
 }
 
