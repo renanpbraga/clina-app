@@ -3,17 +3,17 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { GlobalStyle } from './styles/global';
 import { UserProvider } from './context/useContext';
 import Login from './components/login/Login';
-import Reservations from './components/reservations/Reservations';
+import Rooms from './components/rooms/Rooms';
 
-function App() {
+const App: React.FC = () => {
 
   return (
     <UserProvider>
       <GlobalStyle />
       <BrowserRouter>
         <Switch>
-          <Route path="/reservarions" component={ Reservations }/>
           <Route exact path="/" component={ Login }/>
+          <Route path="/rooms" component={ Rooms }/>
         </Switch>
       </BrowserRouter>
     </UserProvider>

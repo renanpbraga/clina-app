@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import logo from '../../images/logo-clina.png';
+import visibilityOn from '../../images/visibility-on.svg';
+import visibilityOff from '../../images/visibility-off.svg'
 import { Container } from './styles';
 import { useHistory } from 'react-router-dom';
-import { useUser } from '../../context/useContext';
 
-function Login() {
+const Login: React.FC = () => {
   let history = useHistory();
+  console.log(history);
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState(false);
+  const [passwordVisibility, setPasswordVisibility] = useState("password");
+  const [olho, setOlho] = useState(true);
 
   const mockedUser = {
     email: 'renan@clina.care',
@@ -17,9 +21,20 @@ function Login() {
 
   const handleLogin = () => {
     if( user === mockedUser.email && password === mockedUser.password) {
-      history.push('/reservations');
+      history.push('/rooms');
     } else {
       setMessage(true);
+    }
+  }
+
+  const handlePasswordVisibility = () => {
+    if(passwordVisibility === "password"){
+      setPasswordVisibility("text");
+      setOlho(false);
+    }
+    if(passwordVisibility === "text"){
+      setPasswordVisibility("password");
+      setOlho(true);
     }
   }
 
@@ -36,21 +51,32 @@ function Login() {
             type="text"
             id="email-input"
             onChange={(event) => setUser(event.target.value)}
+            placeholder="Digite seu e-mail"
           />
         </label>
-        <label htmlFor="password-input">
-          Senha:
-          <br/>
-          <input
-            type="password"
-            id="password-input"
-            onChange={(event) => setPassword(event.target.value)}
-            className="password"
-          />
-        </label>
+          <label htmlFor="password-input">
+            Senha:
+            <br/>
+            <div className="password-field">
+            <input
+              type={passwordVisibility}
+              id="password-input"
+              onChange={(event) => setPassword(event.target.value)}
+              />
+            <img
+              src={olho ? visibilityOn : visibilityOff}
+              onClick={handlePasswordVisibility}
+              className="ver-senha"
+              alt="Botão de mostrar senha"
+            />
+            </div>
+          </label>
         <button type="submit" onClick={handleLogin}>Entrar</button>
         <p>Esqueci minha senha</p>
       </section>
+      <div className="cadastre-se">
+        <span>Novo na plataforma? <a href="#">Cadastre-se</a></span>
+      </div>
     </Container>
   )
 }

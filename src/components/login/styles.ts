@@ -1,16 +1,21 @@
 import styled from 'styled-components';
-import visibilityOn from '../../images/visibility-on.svg';
 
 export const Container = styled.main`
   background-color: #fafafa;
   display: flex;
+  flex-direction: column;
   font-family: poppins;
   height: 100vh;
   max-width: 1fr;
+  .cadastre-se {
+    margin: -10px auto auto auto;
+    text-align: center;
+    width: 30%;
+  }
   section{
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 8px #cccccc;
+    box-shadow: 0px 4px 6px #00000014;
+    border: 1px solid #CFCFCF;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -28,23 +33,27 @@ export const Container = styled.main`
     input {
       border: solid 1px #CFCFCF;
       border-radius: 4px;
+      font-size: 1em;
       height: 35px;
       margin-bottom: 6px;
+      min-width: 300px;
       padding-left: 10px;
       width: 100%;
-      &.password {
-        background-image: url(${visibilityOn});
-        background-position: bottom 5px right 10px;
-        background-repeat: no-repeat;
-        background-size: 20px;
-        padding-right: 10px;
-      }
+    }
+  }
+  
+  .password-field{
+    display:flex;
+    img {
+      margin-left: -30px;
+      margin-top: -5px;
     }
   }
 
   button {
     background-color: #7A35FF;
     border: 0;
+    border-radius: 4px;
     box-shadow: 0px 4px 8px #0000001F;
     color: #ffffff;
     font-weight: bold;
@@ -74,6 +83,6 @@ export const Container = styled.main`
   }
 
   .index-logo {
-    width: 200px;
+    width: 160px;
   }
-`
+  `

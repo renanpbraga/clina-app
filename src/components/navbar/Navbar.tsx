@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
+import user from '../../images/user.png'
 import logo from '../../images/logo-clina.png';
+import { Nav } from './styles';
 
-function Navbar() {
+const Navbar: React.FC = () =>{
+
+  const [userMenu, setUserMenu] = useState(false)
+
+  const handleUserMenu = () => {
+    if (userMenu === false){
+      setUserMenu(true);
+    }
+    if (userMenu === true) {
+      setUserMenu(false);
+    }
+  }
+
   return (
-    <div>
-    <img src={logo} alt="Logotipo da Clina" height="50"/>      
-    </div>
+    <Nav className="Navbar">
+      <div>
+        <img src={logo} alt="Logotipo da Clina" className="logo" />
+        <img className="user-button"src={user} alt="Menu do usuário" onClick={handleUserMenu}/>
+      </div>      
+    </Nav>
   )
 }
 
