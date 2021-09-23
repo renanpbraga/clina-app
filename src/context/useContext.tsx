@@ -8,12 +8,12 @@ interface ProviderProps {
   children: ReactNode;
 }
 
-interface Clinica{
+export interface Clinica{
   id: number;
   nome: string;
   endereco: string;
   preco: number;
-  img: any;
+  img: string;
 }
 
 interface ContextData {
@@ -34,6 +34,12 @@ export const UserProvider = ({ children }:ProviderProps) => {
     endereco: 'Bela Vista, SP',
     preco: 80,
     img: clinica1,
+    comodidades: [
+      'Sofá/Divã',
+      'Lavatório/Pia',
+      'Impressora',
+    ],
+
     },
     {
       id: 2,
@@ -41,6 +47,11 @@ export const UserProvider = ({ children }:ProviderProps) => {
       endereco: 'Bela Vista, SP',
       preco: 85,
       img: clinica2,
+      comodidades: [
+        'Sofá/Divã',
+        'Lavatório/Pia',
+        'Impressora',
+      ],
     },
     {
       id: 3,
@@ -48,6 +59,11 @@ export const UserProvider = ({ children }:ProviderProps) => {
       endereco: 'Bela Vista, SP',
       preco: 90,
       img: clinica3,
+      comodidades: [
+        'Sofá/Divã',
+        'Lavatório/Pia',
+        'Impressora',
+      ],
     },
     {
       id: 4,
@@ -67,7 +83,7 @@ export const UserProvider = ({ children }:ProviderProps) => {
   );
 }
 
-export const useUser = () => {
+export const useClinica = () => {
   const context = useContext(ContextClinica)
   return context;
 }

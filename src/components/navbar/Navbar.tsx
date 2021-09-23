@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import user from '../../images/user.png'
 import logo from '../../images/logo-clina.png';
+import iconArrowDown from '../../images/iconArrowDown.svg'
 import { Nav } from './styles';
 
 const Navbar: React.FC = () =>{
@@ -18,10 +19,15 @@ const Navbar: React.FC = () =>{
 
   return (
     <Nav className="Navbar">
-      <div>
-        <img src={logo} alt="Logotipo da Clina" className="logo" />
-        <img className="user-button"src={user} alt="Menu do usuário" onClick={handleUserMenu}/>
-      </div>      
+      <div id="navbar-container">
+        <div>
+          <img src={logo} id="logo" alt="Logotipo da Clina" />
+        </div>
+        <div id="user-menu">  
+          <img src={user} id="user-button" alt="Menu do usuário" onClick={handleUserMenu}/>
+          <img src={iconArrowDown} id="arrow-icon" alt="" className="logo" width="14"/>
+        </div>      
+      </div>
     </Nav>
   )
 }

@@ -16,13 +16,21 @@ export const Message = styled.p`
 export const MainContainer = styled.main`
   background-color: #FAFAFA;
   margin: 0 auto;
-  .local h3 {
-    margin-top: 40px;
-    margin-bottom: 12px;
+  #texto-local{
+    align-items: center;
+    display:flex;
+    margin-top: 12px;
   }
   .local p {
+    text-align: left;
+    font: normal normal bold 28px/28px Poppins;
+    letter-spacing: 0px;
+    color: #111111;
+    opacity: 1;
+  }
+  .local span {
     color: #4F4F4F;
-    margin-bottom: 20px
+    margin-left: 8px;
   }
   .main-section {
     margin: 0 auto;
@@ -31,6 +39,7 @@ export const MainContainer = styled.main`
   .filters{
     display: flex;
     flex-direction: row-wrap;
+    margin-top: 20px;
     min-width: 300px;
     width: 432px;
     justify-content: space-between;
@@ -61,6 +70,10 @@ export const MapClinicas = styled.section`
   margin: 0 auto;
   min-width: 300px;
   width: 100%;
+  #salas-disponiveis {
+    color: #4F4F4F;
+    margin-top: 28px;
+  }
   article {
     background-color: #FFFFFF;
     border: 1px solid #CFCFCF;
@@ -90,7 +103,6 @@ export const MapClinicas = styled.section`
     margin: 0 auto;
     text-align: center;
     font-size: 2em;
-    font-weight: bold;
     p {
       font-weight: normal;
       text-align: right;

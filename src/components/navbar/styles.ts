@@ -5,20 +5,29 @@ export const Nav = styled.nav`
   background-color: #FFFFFF;
   display: flex;
   justify-content: space-between;
-  width: 100%;
   height: 80px;
-  .logo {
-    height: 40px;
-  }
-  .user-button {
-    width: 36px;
-    height: 36px;
-  }
-  div {
-    align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  #navbar-container {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
     width: 85%;
+  }
+  #logo {
+    height: 40px;
+  }
+  #user-menu{
+    display: flex;
+    align-items: center;
+    #user-button {
+      background-color: #EEEEEE;
+      border-radius: 100px;
+      width: 36px;
+      height: 36px;
+    }
+  #arrow-icon {
+    margin-left: 8px;
+  }  
   }
 `

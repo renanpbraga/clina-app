@@ -4,6 +4,7 @@ import { GlobalStyle } from './styles/global';
 import { UserProvider } from './context/useContext';
 import Login from './components/login/Login';
 import Rooms from './components/rooms/Rooms';
+import Reservations from './components/reservations/Reservations';
 
 const App: React.FC = () => {
 
@@ -12,6 +13,7 @@ const App: React.FC = () => {
       <GlobalStyle />
       <BrowserRouter>
         <Switch>
+          <Route path="/rooms/:id" component={ Reservations } />
           <Route exact path="/" component={ Login }/>
           <Route path="/rooms" component={ Rooms }/>
         </Switch>
