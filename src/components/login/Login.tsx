@@ -19,8 +19,10 @@ const Login: React.FC = () => {
     password: '123456',
   };
 
+  const validEmail = mockedUser.email.match(/[a-z]+@[a-z]+.com/g);
+  
   const handleLogin = () => {
-    if( user === mockedUser.email && password === mockedUser.password) {
+    if( user === mockedUser.email && validEmail && password === mockedUser.password) {
       history.push('/rooms');
     } else {
       setMessage(true);

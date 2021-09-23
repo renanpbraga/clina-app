@@ -7,7 +7,7 @@ interface IRoom {
   id: string | undefined;
 }
 
-const Reservations:React.FC = () => {
+const Booking:React.FC = () => {
   const paramObj:IRoom = useParams();
 
   const {mockedClinicas} = useClinica()
@@ -29,4 +29,4 @@ const Reservations:React.FC = () => {
   )
 }
 
-export default Reservations
+export default Booking;

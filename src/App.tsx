@@ -4,7 +4,7 @@ import { GlobalStyle } from './styles/global';
 import { UserProvider } from './context/useContext';
 import Login from './components/login/Login';
 import Rooms from './components/rooms/Rooms';
-import Reservations from './components/reservations/Reservations';
+import Reservations from './components/booking/Booking';
 
 const App: React.FC = () => {
 
