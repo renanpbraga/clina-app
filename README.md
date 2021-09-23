@@ -5,6 +5,7 @@ Desafio prático para processo seletivo da empresa Clina.care.
 A página de login possui um usuário mockado:
 
 usuário: renan@clina.care
+
 senha: 123456
 
 Para o desenvolvimento foi utilizado React + Typescript.
